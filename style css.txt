@@ -1,43 +1,55 @@
-<html>
-    <head>
-        <meta charset="utf-8">
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: navy; /* Menggunakan kata warna Navy */
+    color: white;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
 
-        <title>Blank template</title>
+#layar-belajar {
+    padding: 100px 20px;
+}
 
-        <!-- Load external CSS styles -->
-        <link rel="stylesheet" href="styles.css">
+.btn-belajar {
+    padding: 15px 30px;
+    font-size: 18px;
+    background-color: green;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+}
 
-    </head>
+#layar-game {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    padding-top: 100px;
+    z-index: 999;
+}
 
-    <body>
+.status-box {
+    border: 3px solid white;
+    width: 300px;
+    margin: 20px auto;
+    padding: 15px;
+    background-color: blue; /* Menggunakan kata warna Biru */
+}
 
-        <h1>welcome to our space</h1>
-        <marquee> Design by Arkha ganteng ig:keyszararkha </marquee>
-        <ul>
-         <br><Li><a href = "Home html">Home</a></Li>
-         <br><Li><a href ="design html">Design</a></Li>
-         <br><Li><a href ="produk.html">produk</a></Li>
-         </ul>   
-        <!-- Load external JavaScript -->
-        <script src="scripts.js"></script>
-
-        <p> "Sometimes the road feels long and the finish line seems far away, but don’t let that discourage you. Keep going.
-             Everything you need will come to you at the perfect time. Trust that the universe has a plan for your hard work. 
-            You aren't falling behind; you are exactly where you need to be to grow into the person you're meant to become."</p>
- <p2> <pre> When mountains loom and the path is steep,
-            Remember the promises you must keep.
-            The shadows are long, but they cannot stay,
-            They always fade at the break of day.
-            It’s not how fast you run the race,
-            But finishing with strength and grace.
-            For steel is forged in the hottest fire,
-            And souls are built to reach much higher.
-            Don’t lose your light, don’t turn away,
-            The dawn is coming to end the grey.
-            Do not surrender, for stars so bright,
-            Only shine in the darkest night.
-    
-        
-    </body>
-
-</html>
+.btn-game {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 3px;
+    font-weight: bold;
+}
+.btn-minum { background-color: dodgerblue; color: white; }
+.btn-istirahat { background-color: orangered; color: white; }
