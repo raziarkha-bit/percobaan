@@ -64,7 +64,7 @@
 </head>
 <body>
 
-    <audio id="suara-alarm" src="suaraku.mp3" preload="auto"></audio>
+    <audio id="suara-alarm" src="suaraku.mp3.mp3" preload="auto"></audio>
 
     <div id="layar-belajar">
         <h1>Mode Belajar Aktif 📖</h1>
@@ -112,10 +112,10 @@
                 });
             }
 
-            // 🎵 Suara diputar tepat saat 30 menit habis, dan hanya berbunyi sekali
+           
             let lagu = document.getElementById("suara-alarm");
             lagu.play().catch(function(error) {
-                console.log("Autoplay terblokir browser sebelum ada interaksi klik.");
+                console.log("Suara tertahan sistem keamanan browser. Lakukan klik di halaman web terlebih dahulu agar suara diizinkan aktif.");
             });
         }
 
@@ -134,13 +134,7 @@
             document.getElementById("char-hp").innerText = hp;
 
             if (hp >= 100) {
-                // Di sini tidak perlu lagu.pause() lagi karena suaranya sudah selesai dengan sendirinya
                 document.getElementById("char-status").innerText = "Bugar 💪";
                 document.getElementById("char-status").style.color = "lime";
                 alert("Pahlawanmu sudah bugar! Kembali belajar.");
-                document.getElementById("layar-game").style.display = "none";
-            }
-        }
-    </script>
-</body>
-</html>
+                document.getElementById("layar-game").style.display
