@@ -1,43 +1,150 @@
-<html>
-    <head>
-        <meta charset="utf-8">
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hydration Hero</title>
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace; 
+            background-color: darkslategray;
+            color: white; 
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
 
-        <title>Blank template</title>
+        #layar-belajar {
+            padding: 100px 20px;
+        }
 
-        <!-- Load external CSS styles -->
-        <link rel="stylesheet" href="styles.css">
+        .btn-belajar {
+            padding: 15px 30px;
+            font-size: 18px;
+            background-color: green;
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            font-weight: bold;
+        }
 
-    </head>
+        #layar-game {
+            display: none; 
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: black; 
+            padding-top: 100px;
+            z-index: 999;
+        }
 
-    <body>
+        .status-box {
+            border: 3px solid white;
+            width: 300px;
+            margin: 20px auto;
+            padding: 15px;
+            background-color: darkcyan;
+        }
 
-        <h1>welcome to our space</h1>
-        <marquee> Design by Arkha ganteng ig:keyszararkha </marquee>
-        <ul>
-         <br><Li><a href = "Home html">Home</a></Li>
-         <br><Li><a href ="design html">Design</a></Li>
-         <br><Li><a href ="produk.html">produk</a></Li>
-         </ul>   
-        <!-- Load external JavaScript -->
-        <script src="scripts.js"></script>
+        .btn-game {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .btn-minum { background-color: dodgerblue; color: white; }
+        .btn-istirahat { background-color: orangered; color: white; }
+    </style>
+</head>
+<body>
 
-        <p> "Sometimes the road feels long and the finish line seems far away, but don’t let that discourage you. Keep going.
-             Everything you need will come to you at the perfect time. Trust that the universe has a plan for your hard work. 
-            You aren't falling behind; you are exactly where you need to be to grow into the person you're meant to become."</p>
- <p2> <pre> When mountains loom and the path is steep,
-            Remember the promises you must keep.
-            The shadows are long, but they cannot stay,
-            They always fade at the break of day.
-            It’s not how fast you run the race,
-            But finishing with strength and grace.
-            For steel is forged in the hottest fire,
-            And souls are built to reach much higher.
-            Don’t lose your light, don’t turn away,
-            The dawn is coming to end the grey.
-            Do not surrender, for stars so bright,
-            Only shine in the darkest night.
-    
-        
-    </body>
+    <audio id="suara-alarm" src="suaraku.mp3" preload="auto" loop></audio>
 
+    <div id="layar-belajar">
+        <h1>Mode Belajar Aktif 📖</h1>
+        <p>Fokuslah belajar. Game "Hydration Hero" akan muncul otomatis setiap 30 menit.</p>
+        <p><i>(Untuk simulasi cepat tanpa menunggu lama, klik tombol di bawah)</i></p>
+        <button class="btn-belajar" onclick="munculkanGame()">Simulasi Waktu Habis ⏱️</button>
+    </div>
+
+    <div id="layar-game">
+        <h1 style="color: red;">⚠️ PAHLAWANMU LEMAS! ⚠️</h1>
+        <p>Sudah waktunya minum dan istirahat agar pahlawanmu pulih.</p>
+
+        <div class="status-box">
+            <h3>[ Mori Knight ]</h3>
+            <p>Kondisi: <span id="char-status" style="color: red;">Lemas 😫</span></p>
+            <p>HP Kamu: <span id="char-hp">20</span> / 100</p>
+        </div>
+
+        <p>Pilih tindakanmu:</p>
+        <button class="btn-game btn-minum" onclick="pilihTindakan('minum')">🥤 Minum Air (+40 HP)</button>
+        <button class="btn-game btn-istirahat" onclick="pilihTindakan('istirahat')">🛋️ Istirahat (+40 HP)</button>
+    </div>
+
+    <script>
+        let hp = 20; 
+        const waktuTunggu = 30 * 60 * 1000; 
+
+        window.onload = function() {
+            if (Notification.permission !== "granted") {
+                Notification.requestPermission();
+            }
+        };
+
+        function munculkanGame() {
+            hp = 20; 
+            document.getElementById("char-hp").innerText = hp;
+            document.getElementById("char-status").innerText = "Lemas 😫";
+            document.getElementById("char-status").style.color = "red";
+            document.getElementById("layar-game").style.display = "block";
+
+            if (Notification.permission === "granted") {
+                new Notification("🚨 Hydration Hero", {
+                    body: "Pahlawanmu Lemas! Waktunya minum air dan istirahat sejenak.",
+                    icon: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4a7.png"
+                });
+            }
+
+            // 🎵 MENJALANKAN AUDIO SUARAKU.MP3
+            let lagu = document.getElementById("suara-alarm");
+            lagu.play().catch(function(error) {
+                console.log("Browser memblokir autoplay otomatis sebelum ada interaksi klik.");
+            });
+        }
+
+        setInterval(munculkanGame, waktuTunggu);
+
+        function pilihTindakan(aksi) {
+            if (aksi === 'minum') {
+                hp += 40;
+                alert("Kamu minum segelas air! HP bertambah 40.");
+            } else if (aksi === 'istirahat') {
+                hp += 40;
+                alert("Kamu mengistirahatkan mata sejenak! HP bertambah 40.");
+            }
+
+            if (hp > 100) hp = 100;
+            document.getElementById("char-hp").innerText = hp;
+
+            if (hp >= 100) {
+                // 🛑 MEMATIKAN AUDIO KETIKA KONDISI KEMBALI BUGAR
+                let lagu = document.getElementById("suara-alarm");
+                lagu.pause();
+                lagu.currentTime = 0; // Mengembalikan posisi durasi musik ke awal
+
+                document.getElementById("char-status").innerText = "Bugar 💪";
+                document.getElementById("char-status").style.color = "lime";
+                alert("Pahlawanmu sudah bugar! Kembali belajar.");
+                document.getElementById("layar-game").style.display = "none";
+            }
+        }
+    </script>
+</body>
 </html>
