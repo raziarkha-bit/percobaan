@@ -3,138 +3,63 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hydration Hero</title>
-    <style>
-        body {
-            font-family: 'Courier New', Courier, monospace; 
-            background-color: darkslategray;
-            color: white; 
-            text-align: center;
-            margin: 0;
-            padding: 0;
-        }
-
-        #layar-belajar {
-            padding: 100px 20px;
-        }
-
-        .btn-belajar {
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color: green;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        #layar-game {
-            display: none; 
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: black; 
-            padding-top: 100px;
-            z-index: 999;
-        }
-
-        .status-box {
-            border: 3px solid white;
-            width: 300px;
-            margin: 20px auto;
-            padding: 15px;
-            background-color: darkcyan;
-        }
-
-        .btn-game {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin: 10px;
-            cursor: pointer;
-            border: none;
-            border-radius: 3px;
-            font-weight: bold;
-        }
-        .btn-minum { background-color: dodgerblue; color: white; }
-        .btn-istirahat { background-color: orangered; color: white; }
-    </style>
+    <title>Spaceman Website</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <audio id="suara-alarm" src="suaraku.mp3.mp3" preload="auto"></audio>
-
-    <div id="layar-belajar">
-        <h1>Mode Belajar Aktif 📖</h1>
-        <p>Fokuslah belajar. Game "Hydration Hero" akan muncul otomatis setiap 30 menit.</p>
-        <p><i>(Untuk simulasi cepat tanpa menunggu lama, klik tombol di bawah)</i></p>
-        <button class="btn-belajar" onclick="munculkanGame()">Simulasi Waktu Habis ⏱️</button>
-    </div>
-
-    <div id="layar-game">
-        <h1 style="color: red;">⚠️ PAHLAWANMU LEMAS! ⚠️</h1>
-        <p>Sudah waktunya minum dan istirahat agar pahlawanmu pulih.</p>
-
-        <div class="status-box">
-            <h3>[ Mori Knight ]</h3>
-            <p>Kondisi: <span id="char-status" style="color: red;">Lemas 😫</span></p>
-            <p>HP Kamu: <span id="char-hp">20</span> / 100</p>
+    <div class="logo-box">
+        <div class="logo-header">
+            <img src="https://via.placeholder.com/45" alt="Spaceman Logo" class="spaceman-logo-img">
+            <span class="logo-brand-text">Spaceman</span>
         </div>
-
-        <p>Pilih tindakanmu:</p>
-        <button class="btn-game btn-minum" onclick="pilihTindakan('minum')">🥤 Minum Air (+40 HP)</button>
-        <button class="btn-game btn-istirahat" onclick="pilihTindakan('istirahat')">🛋️ Istirahat (+40 HP)</button>
+        <h1>Design by Arkha</h1>
     </div>
 
-    <script>
-        let hp = 20; 
-        const waktuTunggu = 30 * 60 * 1000; 
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="#" class="nav-item">Home</a></li>
+            <div class="separator"></div>
+            <li><a href="#" class="nav-item">Design</a></li>
+            <div class="separator"></div>
+            <li><a href="#" class="nav-item">Product</a></li>
+        </ul>
+    </nav>
 
-        window.onload = function() {
-            if (Notification.permission !== "granted") {
-                Notification.requestPermission();
-            }
-        };
+    <marquee scrollamount="5">
+        Halo semuanya, selamat datang di website Spaceman! Website ini dibuat oleh 4 orang baik dengan tugasnya masing-masing. Di sini, kami menyediakan produk bernama 'hydration hero', sebuah aplikasi pengatur jadwal minum. Detailnya, silahkan cek dibagian product dan design ya!
+    </marquee>
 
-        function munculkanGame() {
-            hp = 20; 
-            document.getElementById("char-hp").innerText = hp;
-            document.getElementById("char-status").innerText = "Lemas 😫";
-            document.getElementById("char-status").style.color = "red";
-            document.getElementById("layar-game").style.display = "block";
+    <section class="hero">
+        <h1 class="hero-title">Hydration Hero</h1>
+        <p class="p2">Di bawah ini terdapat logo dan perkenalan singkat dari kelompok kami!</p>
+        <button class="hero-btn">Pelajari Selengkapnya</button>
+    </section>
 
-            if (Notification.permission === "granted") {
-                new Notification("🚨 Hydration Hero", {
-                    body: "Pahlawanmu Lemas! Waktunya minum air dan istirahat sejenak.",
-                    icon: "https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/72x72/1f4a7.png"
-                });
-            }
+    <div class="container">
+        <h2 class="section-title">Anggota Kelompok</h2>
+        <div class="anggota">
+            <div class="card">
+                <h3>Anggota 1</h3>
+                <p>Tugas atau perkenalan singkat mengenai peran anggota pertama di kelompok Spaceman.</p>
+            </div>
+            <div class="card">
+                <h3>Anggota 2</h3>
+                <p>Tugas atau perkenalan singkat mengenai peran anggota kedua di kelompok Spaceman.</p>
+            </div>
+            <div class="card">
+                <h3>Anggota 3</h3>
+                <p>Tugas atau perkenalan singkat mengenai peran anggota ketiga di kelompok Spaceman.</p>
+            </div>
+            <div class="card">
+                <h3>Anggota 4</h3>
+                <p>Tugas atau perkenalan singkat mengenai peran anggota keempat di kelompok Spaceman.</p>
+            </div>
+        </div>
+    </div>
 
-           
-            let lagu = document.getElementById("suara-alarm");
-            lagu.play().catch(function(error) {
-                console.log("Suara tertahan sistem keamanan browser. Lakukan klik di halaman web terlebih dahulu agar suara diizinkan aktif.");
-            });
-        }
-
-        setInterval(munculkanGame, waktuTunggu);
-
-        function pilihTindakan(aksi) {
-            if (aksi === 'minum') {
-                hp += 40;
-                alert("Kamu minum segelas air! HP bertambah 40.");
-            } else if (aksi === 'istirahat') {
-                hp += 40;
-                alert("Kamu mengistirahatkan mata sejenak! HP bertambah 40.");
-            }
-
-            if (hp > 100) hp = 100;
-            document.getElementById("char-hp").innerText = hp;
-
-            if (hp >= 100) {
-                document.getElementById("char-status").innerText = "Bugar 💪";
-                document.getElementById("char-status").style.color = "lime";
-                alert("Pahlawanmu sudah bugar! Kembali belajar.");
-                document.getElementById("layar-game").style.display
+</body>
+</html>
