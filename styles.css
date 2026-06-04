@@ -1,22 +1,291 @@
-h1 {
-    text-align: left;
-    font-family: "Source Sans Pro", sans-serif;
+/* ==================== RESET & BASE STYLES ==================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=1920'); 
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* ==================== KOTAK LOGO (Kiri Atas) ==================== */
+.logo-box {
+    padding: 15px;
+    display: inline-flex; 
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: black; 
+    opacity: 0.85;
+    margin-top: 15px;
+    margin-left: 15px;
+    border-radius: 12px;
+    position: absolute;
+    z-index: 1100;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 5px;
+}
+
+.spaceman-logo-img {
+    width: 45px;
+    height: auto;
+    filter: drop-shadow(0 0 5px cyan);
+}
+
+.logo-brand-text {
+    font-size: 20px;
     font-weight: bold;
-    color: navy;
+    color: white;
 }
 
-body {background-color: aqua;
-      border:4px solid red;
-      border-radius: 12px;
+.logo-box h1 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: normal;
+    color: cyan;
 }
 
-.p2 {text-align: center;
-    color:blue;
+/* ==================== NAVBAR (Adaptasi Bentuk Bulat & Sticky Melayang) ==================== */
+.navbar {
+    width: 90%;
+    margin: 20px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 18px 40px;
+    background-color: black; 
+    opacity: 0.9;
+    border-radius: 50px; /* Membuat navbar membulat seperti desain pink */
+    position: sticky;   /* Membuat navbar tetap melayang saat di-scroll */
+    top: 15px;
+    z-index: 1000;
+    margin-top: 110px; /* Jarak agar tidak menabrak kotak logo di atas */
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.15);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-item {
+    text-decoration: none;
+    color: silver;
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 2px; 
+    text-transform: uppercase; 
+    font-family: 'Poppins', sans-serif; 
+    padding: 6px 16px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+/* Efek Hover Khas Tema Luar Angkasa */
+.nav-item:hover {
+    background-color: white;
+    color: black;
+    text-shadow: none;
+    box-shadow: 0 0 15px white;
+}
+
+.separator {
+    width: 6px;
+    height: 6px;
+    background-color: cyan; 
+    border-radius: 50%;
+    box-shadow: 0 0 8px cyan;
+}
+
+/* ==================== MARQUEE ==================== */
+marquee {
+    color: cyan; 
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 25px;
+    display: block;
+}
+
+/* ==================== HERO SECTION (Kotak Besar Transparan) ==================== */
+.hero {
+    max-width: 1000px;
+    margin: 40px auto;
+    text-align: center;
+    background: rgba(0, 0, 0, 0.65); /* Hitam transparan agar background bintang tembus */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 60px;
+    border-radius: 35px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 15px 35px rgba(0, 255, 255, 0.1);
+}
+
+.hero-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 4rem;
+    color: cyan;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+}
+
+.hero p.p2 {
+    max-width: 800px;
+    line-height: 1.8;
+    font-size: 1.2rem;
+    margin: 0 auto 30px auto;
+    color: silver;
+    text-align: center;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+/* Tombol Aksi Tema Cyber/Space */
+.hero-btn {
+    padding: 14px 32px;
+    border: 2px solid cyan;
+    border-radius: 30px;
+    background: transparent;
+    color: cyan;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.hero-btn:hover {
+    background: cyan;
+    color: black;
+    box-shadow: 0 0 20px cyan;
+}
+
+/* ==================== GRID KARTU ANGGOTA ==================== */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 40px 8%;
+}
+
+.section-title {
+    text-align: center;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin-bottom: 50px;
+    font-size: 2.5rem;
+    position: relative;
+}
+
+.section-title::after {
+    content: "";
+    width: 80px;
+    height: 4px;
+    background: cyan;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -12px;
+    border-radius: 10px;
+    box-shadow: 0 0 8px cyan;
+}
+
+.anggota {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 35px;
+}
+
+/* Desain Kartu dengan Efek Kaca Luar Angkasa */
+.card {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+    transition: all 0.3s ease;
+}
+
+/* Efek kartu selang-seling (Zig-Zag) dari kode pink kamu */
+.card:nth-child(even) {
+    margin-top: 40px;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: cyan;
+    box-shadow: 0 12px 30px rgba(0, 255, 255, 0.2);
+}
+
+.card h3 {
+    font-family: 'Poppins', sans-serif;
+    color: cyan;
+    margin-bottom: 12px;
+    font-size: 1.4rem;
+}
+
+.card p {
+    line-height: 1.7;
+    color: silver;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+/* ==================== RESPONSIVE LAYOUT (UNTUK HP) ==================== */
+@media(max-width: 768px) {
+    .logo-box {
+        position: relative;
+        margin: 15px auto;
+        display: flex;
+        justify-content: center;
+        width: fit-content;
     }
 
- ul {list-style-type: none; 
- background-color: blanchedalmond; 
- border:4px solid red
- }
+    .navbar {
+        flex-direction: column;
+        gap: 15px;
+        border-radius: 25px;
+        margin-top: 20px;
+        padding: 15px;
+    }
 
-li{display:inline;}
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .separator {
+        display: none; /* Titik disembunyikan di HP agar rapi */
+    }
+
+    .hero {
+        margin: 20px;
+        padding: 40px 20px;
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .card:nth-child(even) {
+        margin-top: 0;
+    }
+}
