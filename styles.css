@@ -1,291 +1,316 @@
-/* ==================== RESET & BASE STYLES ==================== */
+/* --- RESET & GOOGLE FONTS --- */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
-    background-image: url('https://images.unsplash.com/photo-1506318137071-a8e063b4bec0?q=80&w=1920'); 
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    color: white;
     font-family: 'Poppins', sans-serif;
-    min-height: 100vh;
+    background-color: #050510;
+    color: #ffffff;
     overflow-x: hidden;
+    background-image: 
+        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 20px);
+    background-size: 550px 550px, 350px 350px, 250px 250px;
+    background-position: 0 0, 40px 60px, 130px 270px;
 }
 
-/* ==================== KOTAK LOGO (Kiri Atas) ==================== */
-.logo-box {
-    padding: 15px;
-    display: inline-flex; 
-    flex-direction: column;
-    align-items: flex-start;
-    background-color: black; 
-    opacity: 0.85;
-    margin-top: 15px;
-    margin-left: 15px;
-    border-radius: 12px;
-    position: absolute;
-    z-index: 1100;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.logo-header {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 5px;
-}
-
-.spaceman-logo-img {
-    width: 45px;
-    height: auto;
-    filter: drop-shadow(0 0 5px cyan);
-}
-
-.logo-brand-text {
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-}
-
-.logo-box h1 {
-    margin: 0;
-    font-size: 14px;
-    font-weight: normal;
-    color: cyan;
-}
-
-/* ==================== NAVBAR (Adaptasi Bentuk Bulat & Sticky Melayang) ==================== */
-.navbar {
-    width: 90%;
-    margin: 20px auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 18px 40px;
-    background-color: black; 
-    opacity: 0.9;
-    border-radius: 50px; /* Membuat navbar membulat seperti desain pink */
-    position: sticky;   /* Membuat navbar tetap melayang saat di-scroll */
-    top: 15px;
-    z-index: 1000;
-    margin-top: 110px; /* Jarak agar tidak menabrak kotak logo di atas */
-    border: 1px solid rgba(0, 255, 255, 0.2);
-    box-shadow: 0 8px 25px rgba(0, 255, 255, 0.15);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    gap: 40px;
-}
-
-.nav-item {
-    text-decoration: none;
-    color: silver;
-    font-size: 18px;
-    font-weight: bold;
-    letter-spacing: 2px; 
-    text-transform: uppercase; 
-    font-family: 'Poppins', sans-serif; 
-    padding: 6px 16px;
-    border-radius: 20px;
-    transition: all 0.3s ease;
-}
-
-/* Efek Hover Khas Tema Luar Angkasa */
-.nav-item:hover {
-    background-color: white;
-    color: black;
-    text-shadow: none;
-    box-shadow: 0 0 15px white;
-}
-
-.separator {
-    width: 6px;
-    height: 6px;
-    background-color: cyan; 
-    border-radius: 50%;
-    box-shadow: 0 0 8px cyan;
-}
-
-/* ==================== MARQUEE ==================== */
-marquee {
-    color: cyan; 
-    font-family: sans-serif;
-    font-weight: bold;
-    font-size: 1.1rem;
-    margin-top: 25px;
-    display: block;
-}
-
-/* ==================== HERO SECTION (Kotak Besar Transparan) ==================== */
-.hero {
-    max-width: 1000px;
-    margin: 40px auto;
-    text-align: center;
-    background: rgba(0, 0, 0, 0.65); /* Hitam transparan agar background bintang tembus */
+/* --- NAVIGATION --- */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 8%;
+    background: rgba(5, 5, 16, 0.8);
     backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    padding: 60px;
-    border-radius: 35px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 15px 35px rgba(0, 255, 255, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(0, 242, 254, 0.2);
 }
 
-.hero-title {
-    font-family: 'Poppins', sans-serif;
-    font-size: 4rem;
-    color: cyan;
-    font-weight: bold;
-    margin-bottom: 20px;
-    text-shadow: 0 0 15px rgba(0, 255, 255, 0.5);
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #00f2fe;
+    text-shadow: 0 0 10px #00f2fe;
 }
 
-.hero p.p2 {
-    max-width: 800px;
-    line-height: 1.8;
-    font-size: 1.2rem;
-    margin: 0 auto 30px auto;
-    color: silver;
-    text-align: center;
-    font-family: "Source Sans Pro", sans-serif;
+nav a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 400;
+    margin-left: 35px;
+    transition: 0.3s;
+    text-transform: uppercase;
+    font-size: 14px;
+    letter-spacing: 1px;
 }
 
-/* Tombol Aksi Tema Cyber/Space */
-.hero-btn {
-    padding: 14px 32px;
-    border: 2px solid cyan;
-    border-radius: 30px;
-    background: transparent;
-    color: cyan;
-    font-weight: bold;
-    font-size: 1rem;
-    cursor: pointer;
-    font-family: 'Poppins', sans-serif;
-    transition: all 0.3s ease;
-    box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+nav a:hover, nav a.active {
+    color: #00f2fe;
+    text-shadow: 0 0 8px #00f2fe;
 }
 
-.hero-btn:hover {
-    background: cyan;
-    color: black;
-    box-shadow: 0 0 20px cyan;
-}
-
-/* ==================== GRID KARTU ANGGOTA ==================== */
-.container {
-    max-width: 1200px;
-    margin: auto;
-    padding: 40px 8%;
+/* --- GLOBAL SECTION STYLES --- */
+section {
+    padding: 120px 8% 80px 8%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .section-title {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
     text-align: center;
-    font-family: 'Poppins', sans-serif;
-    color: white;
     margin-bottom: 50px;
-    font-size: 2.5rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    color: #ffffff;
+}
+
+.section-title span {
+    color: #4facfe;
+    text-shadow: 0 0 15px rgba(79, 172, 254, 0.6);
+}
+
+/* --- 1. HOME SECTION --- */
+#home {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+.home-content {
+    max-width: 600px;
+}
+
+.home-content h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 56px;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+
+.home-content h1 span {
+    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.home-content p {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #b0b0d0;
+    margin-bottom: 30px;
+}
+
+.btn {
+    inline-size: max-content;
+    padding: 12px 30px;
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    color: #050510;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 50px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.4s;
+    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 25px rgba(0, 242, 254, 0.8);
+}
+
+.home-img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.planet-glow {
+    width: 350px;
+    height: 350px;
+    background: radial-gradient(circle at 30% 30%, #4facfe, #000);
+    border-radius: 50%;
+    box-shadow: 
+        inset -20px -20px 50px rgba(0,0,0,0.9),
+        0 0 40px rgba(0, 242, 254, 0.4);
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* --- 2. DESIGN SECTION --- */
+#design {
+    background: rgba(255, 255, 255, 0.02);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.design-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.design-box {
+    background: rgba(15, 15, 35, 0.7);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    padding: 40px 30px;
+    border-radius: 15px;
+    transition: 0.4s;
+    text-align: center;
+}
+
+.design-box:hover {
+    border-color: #00f2fe;
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 242, 254, 0.1);
+}
+
+.design-icon {
+    font-size: 40px;
+    color: #00f2fe;
+    margin-bottom: 20px;
+}
+
+.design-box h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 20px;
+    margin-bottom: 15px;
+    letter-spacing: 1px;
+}
+
+.design-box p {
+    font-size: 14px;
+    color: #a0a0c0;
+    line-height: 1.6;
+}
+
+/* --- 3. PRODUCT SECTION --- */
+.product-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: #0f0f27;
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: 0.3s;
     position: relative;
 }
 
-.section-title::after {
-    content: "";
-    width: 80px;
-    height: 4px;
-    background: cyan;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    bottom: -12px;
-    border-radius: 10px;
-    box-shadow: 0 0 8px cyan;
+.product-card:hover {
+    transform: scale(1.03);
+    border-color: rgba(79, 172, 254, 0.5);
 }
 
-.anggota {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 35px;
+.product-img-mock {
+    height: 200px;
+    background: linear-gradient(135deg, #1f1c2c, #928dab);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    letter-spacing: 2px;
 }
 
-/* Desain Kartu dengan Efek Kaca Luar Angkasa */
-.card {
-    background: rgba(0, 0, 0, 0.6);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 25px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-    transition: all 0.3s ease;
+.p-1 { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
+.p-2 { background: linear-gradient(135deg, #141e30, #243b55); }
+.p-3 { background: linear-gradient(135deg, #2c3e50, #000000); }
+
+.product-info {
+    padding: 25px;
 }
 
-/* Efek kartu selang-seling (Zig-Zag) dari kode pink kamu */
-.card:nth-child(even) {
-    margin-top: 40px;
+.product-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 18px;
+    margin-bottom: 10px;
 }
 
-.card:hover {
-    transform: translateY(-5px);
-    border-color: cyan;
-    box-shadow: 0 12px 30px rgba(0, 255, 255, 0.2);
+.product-info p {
+    font-size: 13px;
+    color: #a0a0c0;
+    margin-bottom: 20px;
+    line-height: 1.5;
 }
 
-.card h3 {
-    font-family: 'Poppins', sans-serif;
-    color: cyan;
-    margin-bottom: 12px;
-    font-size: 1.4rem;
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.card p {
-    line-height: 1.7;
-    color: silver;
-    font-family: "Source Sans Pro", sans-serif;
+.price {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: #00f2fe;
 }
 
-/* ==================== RESPONSIVE LAYOUT (UNTUK HP) ==================== */
-@media(max-width: 768px) {
-    .logo-box {
-        position: relative;
-        margin: 15px auto;
-        display: flex;
-        justify-content: center;
-        width: fit-content;
-    }
+.btn-sm {
+    padding: 8px 18px;
+    font-size: 12px;
+}
 
-    .navbar {
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    font-size: 14px;
+    color: #606080;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background: #03030a;
+}
+
+/* --- RESPONSIVE BREAKPOINTS --- */
+@media (max-width: 968px) {
+    #home {
         flex-direction: column;
-        gap: 15px;
-        border-radius: 25px;
-        margin-top: 20px;
-        padding: 15px;
-    }
-
-    .nav-links {
-        flex-wrap: wrap;
+        text-align: center;
         justify-content: center;
-        gap: 15px;
+        padding-top: 140px;
     }
-
-    .separator {
-        display: none; /* Titik disembunyikan di HP agar rapi */
+    .home-content h1 {
+        font-size: 40px;
     }
-
-    .hero {
-        margin: 20px;
-        padding: 40px 20px;
+    .planet-glow {
+        width: 280px;
+        height: 280px;
     }
-
-    .hero-title {
-        font-size: 2.5rem;
+    header {
+        padding: 20px 5%;
     }
-
-    .card:nth-child(even) {
-        margin-top: 0;
+    nav a {
+        margin-left: 20px;
+        font-size: 12px;
     }
 }
