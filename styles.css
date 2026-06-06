@@ -10,13 +10,13 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: #050510;
-    color: #ffffff;
+    background-color: black;
+    color: white;
     overflow-x: hidden;
     background-image: 
-        radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 40px),
-        radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
-        radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 20px);
+        radial-gradient(white, rgba(255,255,255,0.2) 2px, transparent 40px),
+        radial-gradient(white, rgba(255,255,255,0.15) 1px, transparent 30px),
+        radial-gradient(white, rgba(255,255,255,0.1) 2px, transparent 20px);
     background-size: 550px 550px, 350px 350px, 250px 250px;
     background-position: 0 0, 40px 60px, 130px 270px;
 }
@@ -28,13 +28,13 @@ header {
     left: 0;
     width: 100%;
     padding: 20px 8%;
-    background: rgba(5, 5, 16, 0.8);
+    background: rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(10px);
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 1000;
-    border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
 }
 
 .logo {
@@ -43,12 +43,12 @@ header {
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #00f2fe;
-    text-shadow: 0 0 10px #00f2fe;
+    color: cyan;
+    text-shadow: 0 0 10px cyan;
 }
 
 nav a {
-    color: #ffffff;
+    color: white;
     text-decoration: none;
     font-weight: 400;
     margin-left: 35px;
@@ -59,8 +59,8 @@ nav a {
 }
 
 nav a:hover, nav a.active {
-    color: #00f2fe;
-    text-shadow: 0 0 8px #00f2fe;
+    color: cyan;
+    text-shadow: 0 0 8px cyan;
 }
 
 /* --- GLOBAL SECTION STYLES --- */
@@ -79,12 +79,12 @@ section {
     margin-bottom: 50px;
     text-transform: uppercase;
     letter-spacing: 3px;
-    color: #ffffff;
+    color: white;
 }
 
 .section-title span {
-    color: #4facfe;
-    text-shadow: 0 0 15px rgba(79, 172, 254, 0.6);
+    color: dodgerblue;
+    text-shadow: 0 0 15px rgba(30, 144, 255, 0.6);
 }
 
 /* --- 1. HOME SECTION --- */
@@ -109,7 +109,7 @@ section {
 }
 
 .home-content h1 span {
-    background: linear-gradient(45deg, #00f2fe, #4facfe);
+    background: linear-gradient(45deg, cyan, dodgerblue);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -117,27 +117,29 @@ section {
 .home-content p {
     font-size: 16px;
     line-height: 1.8;
-    color: #b0b0d0;
+    color: lightgray;
     margin-bottom: 30px;
 }
 
 .btn {
-    inline-size: max-content;
+    display: inline-block;
+    width: max-content;
     padding: 12px 30px;
-    background: linear-gradient(45deg, #4facfe, #00f2fe);
-    color: #050510;
+    background: linear-gradient(45deg, dodgerblue, cyan);
+    color: black;
     font-weight: 600;
     text-decoration: none;
     border-radius: 50px;
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: 0.4s;
-    box-shadow: 0 0 15px rgba(0, 242, 254, 0.4);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.4);
+    text-align: center;
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 0 25px rgba(0, 242, 254, 0.8);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.8);
 }
 
 .home-img {
@@ -150,11 +152,11 @@ section {
 .planet-glow {
     width: 350px;
     height: 350px;
-    background: radial-gradient(circle at 30% 30%, #4facfe, #000);
+    background: radial-gradient(circle at 30% 30%, dodgerblue, black);
     border-radius: 50%;
     box-shadow: 
         inset -20px -20px 50px rgba(0,0,0,0.9),
-        0 0 40px rgba(0, 242, 254, 0.4);
+        0 0 40px rgba(0, 255, 255, 0.4);
     animation: float 6s ease-in-out infinite;
 }
 
@@ -163,122 +165,212 @@ section {
     50% { transform: translateY(-20px); }
 }
 
-/* --- 2. DESIGN SECTION --- */
+/* --- 2. DESIGN SECTION (Single Layout Upgrade) --- */
 #design {
     background: rgba(255, 255, 255, 0.02);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.design-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.design-box {
-    background: rgba(15, 15, 35, 0.7);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    padding: 40px 30px;
-    border-radius: 15px;
-    transition: 0.4s;
-    text-align: center;
-}
-
-.design-box:hover {
-    border-color: #00f2fe;
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 242, 254, 0.1);
-}
-
-.design-icon {
-    font-size: 40px;
-    color: #00f2fe;
-    margin-bottom: 20px;
-}
-
-.design-box h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 20px;
-    margin-bottom: 15px;
-    letter-spacing: 1px;
-}
-
-.design-box p {
-    font-size: 14px;
-    color: #a0a0c0;
-    line-height: 1.6;
-}
-
-/* --- 3. PRODUCT SECTION --- */
-.product-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 30px;
-}
-
-.product-card {
-    background: #0f0f27;
-    border-radius: 20px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: 0.3s;
-    position: relative;
-}
-
-.product-card:hover {
-    transform: scale(1.03);
-    border-color: rgba(79, 172, 254, 0.5);
-}
-
-.product-img-mock {
-    height: 200px;
-    background: linear-gradient(135deg, #1f1c2c, #928dab);
+.single-design-container {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.design-featured-card {
+    display: flex;
+    flex-direction: row-reverse;
+    background: rgba(20, 20, 40, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+    transition: 0.4s;
+}
+
+.design-featured-card:hover {
+    border-color: cyan;
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.2);
+}
+
+.design-img-large {
+    flex: 1;
+    background: linear-gradient(135deg, darkblue, navy);
+    display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 40px;
+    min-height: 300px;
+    border-left: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.design-preview-icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+    animation: float 5s ease-in-out infinite;
+}
+
+.design-img-large span {
     font-family: 'Orbitron', sans-serif;
     font-size: 14px;
-    color: rgba(255,255,255,0.6);
-    letter-spacing: 2px;
+    color: dodgerblue;
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(30, 144, 255, 0.5);
 }
 
-.p-1 { background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); }
-.p-2 { background: linear-gradient(135deg, #141e30, #243b55); }
-.p-3 { background: linear-gradient(135deg, #2c3e50, #000000); }
-
-.product-info {
-    padding: 25px;
-}
-
-.product-info h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 18px;
-    margin-bottom: 10px;
-}
-
-.product-info p {
-    font-size: 13px;
-    color: #a0a0c0;
-    margin-bottom: 20px;
-    line-height: 1.5;
-}
-
-.product-footer {
+.design-featured-info {
+    flex: 1.2;
+    padding: 45px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
 }
 
-.price {
+.design-featured-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.design-featured-info p {
+    font-size: 15px;
+    color: lightgray;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.design-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.design-tag {
+    background: rgba(30, 144, 255, 0.1);
+    color: dodgerblue;
+    padding: 6px 14px;
+    font-size: 12px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 1px solid rgba(30, 144, 255, 0.3);
+}
+
+.edition-tag {
     font-family: 'Orbitron', sans-serif;
     font-weight: 700;
-    color: #00f2fe;
+    color: cyan;
+    font-size: 13px;
 }
 
-.btn-sm {
-    padding: 8px 18px;
+/* --- 3. PRODUCT SECTION (Single Layout Upgrade) --- */
+.single-product-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.product-featured-card {
+    display: flex;
+    flex-direction: row;
+    background: rgba(20, 20, 40, 0.8);
+    border: 1px solid rgba(0, 255, 255, 0.2);
+    border-radius: 24px;
+    overflow: hidden;
+    max-width: 900px;
+    width: 100%;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+    transition: 0.4s;
+}
+
+.product-featured-card:hover {
+    border-color: dodgerblue;
+    box-shadow: 0 0 30px rgba(30, 144, 255, 0.25);
+}
+
+.product-img-large {
+    flex: 1;
+    background: linear-gradient(135deg, midnightblue, black);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px;
+    min-height: 300px;
+    border-right: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.game-icon {
+    font-size: 70px;
+    margin-bottom: 15px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.product-img-large span {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 14px;
+    color: cyan;
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+}
+
+.product-featured-info {
+    flex: 1.2;
+    padding: 45px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.product-featured-info h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 28px;
+    color: white;
+    margin-bottom: 15px;
+}
+
+.product-featured-info p {
+    font-size: 15px;
+    color: lightgray;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.product-meta {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.status-tag {
+    background: rgba(0, 255, 255, 0.1);
+    color: cyan;
+    padding: 6px 14px;
     font-size: 12px;
+    border-radius: 50px;
+    font-weight: 600;
+    border: 1px solid rgba(0, 255, 255, 0.3);
+}
+
+.price-tag {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: dodgerblue;
+    font-size: 14px;
+}
+
+.btn-play {
+    width: 100%;
 }
 
 /* --- FOOTER --- */
@@ -286,9 +378,9 @@ footer {
     text-align: center;
     padding: 40px;
     font-size: 14px;
-    color: #606080;
+    color: gray;
     border-top: 1px solid rgba(255, 255, 255, 0.05);
-    background: #03030a;
+    background: black;
 }
 
 /* --- RESPONSIVE BREAKPOINTS --- */
@@ -312,5 +404,17 @@ footer {
     nav a {
         margin-left: 20px;
         font-size: 12px;
+    }
+    .design-featured-card, .product-featured-card {
+        flex-direction: column;
+    }
+    .design-img-large, .product-img-large {
+        border-right: none;
+        border-left: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        min-height: 200px;
+    }
+    .design-featured-info, .product-featured-info {
+        padding: 30px;
     }
 }
