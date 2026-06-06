@@ -3,63 +3,94 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spaceman Website</title>
-    
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Source+Sans+Pro:wght@400;700&display=swap" rel="stylesheet">
-    
+    <title>ASTROVERSE - Jelajahi Tanpa Batas</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="logo-box">
-        <div class="logo-header">
-            <img src="https://via.placeholder.com/45" alt="Spaceman Logo" class="spaceman-logo-img">
-            <span class="logo-brand-text">Spaceman</span>
+    <header>
+        <div class="logo">Astroverse</div>
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#design">Design</a>
+            <a href="#product">Product</a>
+        </nav>
+    </header>
+
+    <section id="home">
+        <div class="home-content">
+            <h1>Jelajahi <span>Galaksi</span> Baru</h1>
+            <p>Bawa imajinasimu melintasi batas kecepatan cahaya. Kami menghadirkan inovasi teknologi masa depan dan estetika kosmik yang belum pernah kamu temukan di bumi sebelumnya.</p>
+            <a href="#product" class="btn">Mulai Eksplorasi</a>
         </div>
-        <h1>Design by Arkha</h1>
-    </div>
-
-    <nav class="navbar">
-        <ul class="nav-links">
-            <li><a href="#" class="nav-item">Home</a></li>
-            <div class="separator"></div>
-            <li><a href="#" class="nav-item">Design</a></li>
-            <div class="separator"></div>
-            <li><a href="#" class="nav-item">Product</a></li>
-        </ul>
-    </nav>
-
-    <marquee scrollamount="5">
-        Halo semuanya, selamat datang di website Spaceman! Website ini dibuat oleh 4 orang baik dengan tugasnya masing-masing. Di sini, kami menyediakan produk bernama 'hydration hero', sebuah aplikasi pengatur jadwal minum. Detailnya, silahkan cek dibagian product dan design ya!
-    </marquee>
-
-    <section class="hero">
-        <h1 class="hero-title">Hydration Hero</h1>
-        <p class="p2">Di bawah ini terdapat logo dan perkenalan singkat dari kelompok kami!</p>
-        <button class="hero-btn">Pelajari Selengkapnya</button>
+        <div class="home-img">
+            <div class="planet-glow"></div>
+        </div>
     </section>
 
-    <div class="container">
-        <h2 class="section-title">Anggota Kelompok</h2>
-        <div class="anggota">
-            <div class="card">
-                <h3>Anggota 1</h3>
-                <p>Tugas atau perkenalan singkat mengenai peran anggota pertama di kelompok Spaceman.</p>
+    <section id="design">
+        <h2 class="section-title">Cosmic <span>Design</span></h2>
+        <div class="design-container">
+            <div class="design-box">
+                <div class="design-icon">✦</div>
+                <h3>Futuristic Interface</h3>
+                <p>Tata letak bersih yang mengadopsi gaya fiksi ilmiah modern, memberikan pengalaman visual yang mendalam.</p>
             </div>
-            <div class="card">
-                <h3>Anggota 2</h3>
-                <p>Tugas atau perkenalan singkat mengenai peran anggota kedua di kelompok Spaceman.</p>
+            <div class="design-box">
+                <div class="design-icon">🪐</div>
+                <h3>Nebula Palette</h3>
+                <p>Kombinasi warna gelap pekat kosmos dipadukan dengan kilau warna neon bintang yang memanjakan mata.</p>
             </div>
-            <div class="card">
-                <h3>Anggota 3</h3>
-                <p>Tugas atau perkenalan singkat mengenai peran anggota ketiga di kelompok Spaceman.</p>
-            </div>
-            <div class="card">
-                <h3>Anggota 4</h3>
-                <p>Tugas atau perkenalan singkat mengenai peran anggota keempat di kelompok Spaceman.</p>
+            <div class="design-box">
+                <div class="design-icon">☄</div>
+                <h3>Aerodynamic Shape</h3>
+                <p>Setiap lengkungan komponen dirancang presisi layaknya arsitektur kapal penjelajah luar angkasa.</p>
             </div>
         </div>
-    </div>
+    </section>
+
+    <section id="product">
+        <h2 class="section-title">Our <span>Products</span></h2>
+        <div class="product-container">
+            <div class="product-card">
+                <div class="product-img-mock p-1">[ NEBULA WATCH V.1 ]</div>
+                <div class="product-info">
+                    <h3>Stellar Chrono</h3>
+                    <p>Jam tangan dengan sinkronisasi waktu atomik galaksi dan pelacak rute rasi bintang real-time.</p>
+                    <div class="product-footer">
+                        <span class="price">2.499 BTC</span>
+                        <a href="#" class="btn btn-sm">Beli</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-mock p-2">[ ASTRONAUT HELMET ]</div>
+                <div class="product-info">
+                    <h3>Apex Helmet</h3>
+                    <p>Pelindung kepala bersertifikasi antariksa dengan HUD interaktif dan suplai oksigen sirkulasi otomatis.</p>
+                    <div class="product-footer">
+                        <span class="price">5.150 BTC</span>
+                        <a href="#" class="btn btn-sm">Beli</a>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card">
+                <div class="product-img-mock p-3">[ QUANTUM DRIVE ]</div>
+                <div class="product-info">
+                    <h3>Void Drive 8TB</h3>
+                    <p>Penyimpanan data berbasis kuantum super cepat, tahan radiasi kosmik ekstrem dan hampa udara.</p>
+                    <div class="product-footer">
+                        <span class="price">1.200 BTC</span>
+                        <a href="#" class="btn btn-sm">Beli</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 ASTROVERSE. Designed by Arkha. Seluruh Hak Cipta Dilindungi.</p>
+    </footer>
 
 </body>
 </html>
