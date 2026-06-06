@@ -1,4 +1,4 @@
-/* --- RESET & GOOGLE FONTS --- */
+
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;400;600&display=swap');
 
 * {
@@ -21,7 +21,7 @@ body {
     background-position: 0 0, 40px 60px, 130px 270px;
 }
 
-/* --- NAVIGATION --- */
+
 header {
     position: fixed;
     top: 0;
@@ -63,7 +63,7 @@ nav a:hover, nav a.active {
     text-shadow: 0 0 8px cyan;
 }
 
-/* --- GLOBAL SECTION STYLES --- */
+
 section {
     padding: 120px 8% 80px 8%;
     min-height: 100vh;
@@ -87,7 +87,7 @@ section {
     text-shadow: 0 0 15px rgba(30, 144, 255, 0.6);
 }
 
-/* --- 1. HOME SECTION --- */
+
 #home {
     display: flex;
     flex-direction: row;
@@ -165,7 +165,7 @@ section {
     50% { transform: translateY(-20px); }
 }
 
-/* --- 2. DESIGN SECTION (Single Layout Upgrade) --- */
+
 #design {
     background: rgba(255, 255, 255, 0.02);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -270,7 +270,7 @@ section {
     font-size: 13px;
 }
 
-/* --- 3. PRODUCT SECTION (Single Layout Upgrade) --- */
+
 .single-product-container {
     display: flex;
     justify-content: center;
@@ -373,7 +373,7 @@ section {
     width: 100%;
 }
 
-/* --- FOOTER --- */
+
 footer {
     text-align: center;
     padding: 40px;
@@ -383,7 +383,7 @@ footer {
     background: black;
 }
 
-/* --- RESPONSIVE BREAKPOINTS --- */
+
 @media (max-width: 968px) {
     #home {
         flex-direction: column;
